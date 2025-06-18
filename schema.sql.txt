@@ -1,0 +1,28 @@
+create table doctors (
+	DoctorID INT,
+	Name VARCHAR(50),
+	Specialization VARCHAR(11),
+	Phone VARCHAR(50),
+	Email VARCHAR(50)
+);
+
+CREATE TABLE Patients (
+    PatientID INT PRIMARY KEY,
+    Name VARCHAR(100),
+    Gender VARCHAR(10),
+    DOB DATE,
+    Phone VARCHAR(20),
+    Address TEXT,
+    RegistrationDate DATE
+);
+
+CREATE TABLE Appointments (
+    AppointmentID INT PRIMARY KEY,
+    PatientID INT,
+    DoctorID INT,
+    AppointmentDate DATE,
+    Reason VARCHAR(255),
+    Status VARCHAR(20),
+    FOREIGN KEY (PatientID) REFERENCES Patients(PatientID),
+    FOREIGN KEY (DoctorID) REFERENCES Doctors(DoctorID)
+);

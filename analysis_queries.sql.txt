@@ -1,0 +1,145 @@
+1:
+SELECT
+    strftime('%Y-%m', AppointmentDate) AS Month,
+    COUNT(*) AS TotalAppointments,
+    COUNT(CASE WHEN Status = 'Completed' THEN 1 END) AS Completed,
+    COUNT(CASE WHEN Status = 'Cancelled' THEN 1 END) AS Cancelled,
+    COUNT(CASE WHEN Status = 'No-show' THEN 1 END) AS NoShow,
+    COUNT(CASE WHEN Status = 'Scheduled' THEN 1 END) AS Scheduled
+FROM Appointments
+WHERE AppointmentDate >= date('now', '-6 months')
+GROUP BY Month
+ORDER BY Month;
+
+2:
+SELECT 
+    strftime('%w', AppointmentDate) AS DayOfWeekNumber,  -- 0=Sunday, 1=Monday, ..., 6=Saturday
+    CASE strftime('%w', AppointmentDate)
+        WHEN '0' THEN 'Sunday'
+        WHEN '1' THEN 'Monday'
+        WHEN '2' THEN 'Tuesday'
+        WHEN '3' THEN 'Wednesday'
+        WHEN '4' THEN 'Thursday'
+        WHEN '5' THEN 'Friday'
+        WHEN '6' THEN 'Saturday'
+    END AS DayOfWeek,
+    COUNT(*) AS TotalAppointments
+FROM Appointments
+GROUP BY DayOfWeekNumber
+ORDER BY TotalAppointments DESC;
+
+3:
+SELECT 
+    ROUND(
+        100.0 * SUM(CASE WHEN Status IN ('Cancelled', 'No-show') THEN 1 ELSE 0 END) / COUNT(*), 
+        2
+    ) AS CancelledOrMissedPercentage
+FROM Appointments;
+
+4:
+SELECT 
+    DoctorID,
+    COUNT(*) AS TotalAppointments
+FROM Appointments
+GROUP BY DoctorID
+ORDER BY TotalAppointments DESC
+LIMIT 1;
+
+5:
+SELECT 
+    d.Specialization,
+    COUNT(*) AS TotalAppointments
+FROM Appointments a
+JOIN Doctors d ON a.DoctorID = d.DoctorID
+GROUP BY d.Specialization
+ORDER BY TotalAppointments DESC
+LIMIT 1;
+
+6:
+SELECT 
+    SUM(b.Amount) AS TotalRevenue
+FROM Appointments a
+JOIN Bills b ON a.PatientID = b.PatientID
+WHERE a.Status = 'Completed';
+
+7:
+SELECT 
+    AVG(TotalAmount) AS AvgBillPerPatient
+FROM (
+    SELECT 
+        PatientID,
+        SUM(Amount) AS TotalAmount
+    FROM Bills
+    GROUP BY PatientID
+);
+
+8:
+SELECT 
+    COUNT(*) AS PatientsWithMultipleVisits
+FROM (
+    SELECT 
+        PatientID,
+        COUNT(*) AS VisitCount
+    FROM Appointments
+    WHERE AppointmentDate >= date('now', '-3 months')
+    GROUP BY PatientID
+    HAVING VisitCount > 1
+);
+
+9:
+SELECT 
+    Gender,
+    CASE 
+        WHEN julianday('now') - julianday(DOB) < 365*30 THEN 'Under 30'
+        WHEN julianday('now') - julianday(DOB) < 365*50 THEN '30-49'
+        ELSE '50 and above'
+    END AS AgeGroup,
+    COUNT(*) AS TotalAppointments
+FROM Patients p
+JOIN Appointments a ON p.PatientID = a.PatientID
+GROUP BY Gender, AgeGroup
+ORDER BY TotalAppointments DESC
+LIMIT 1;
+
+10:
+SELECT 
+    Reason,
+    COUNT(*) AS Frequency
+FROM Appointments
+GROUP BY Reason
+ORDER BY Frequency DESC
+LIMIT 5;
+
+11:
+SELECT 
+    Reason,
+    strftime('%m', AppointmentDate) AS Month,
+    COUNT(*) AS TotalCases
+FROM Appointments
+WHERE Reason IN ('Asthma', 'Fever')
+GROUP BY Reason, Month
+ORDER BY Reason, Month;
+
+12:
+SELECT 
+    d.DoctorID,
+    d.Name,
+    ROUND(
+        100.0 * SUM(CASE WHEN a.Status IN ('Cancelled', 'No-show') THEN 1 ELSE 0 END) / COUNT(*),
+        2
+    ) AS MissedAppointmentRate
+FROM Appointments a
+JOIN Doctors d ON a.DoctorID = d.DoctorID
+GROUP BY d.DoctorID, d.Name
+ORDER BY MissedAppointmentRate DESC;
+
+
+
+
+
+
+
+
+
+
+

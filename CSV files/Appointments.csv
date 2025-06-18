@@ -1,0 +1,101 @@
+AppointmentID,PatientID,DoctorID,AppointmentDate,Reason,Status
+1,28,60,2025-06-14,Asthma,Completed
+2,92,20,2025-03-04,Hypertension,Cancelled
+3,57,58,2025-04-06,Asthma,No-show
+4,16,16,2024-12-16,Injury,Scheduled
+5,44,2,2025-02-04,Routine Check,Completed
+6,76,15,2025-01-18,Fever,Scheduled
+7,91,41,2025-03-05,Fever,Completed
+8,9,58,2025-03-24,Fever,Cancelled
+9,10,33,2025-01-05,Injury,Cancelled
+10,86,32,2025-04-03,Injury,Completed
+11,93,60,2024-12-30,Routine Check,No-show
+12,32,51,2025-03-23,Cough,No-show
+13,25,7,2025-02-11,Checkup,No-show
+14,46,28,2025-02-20,Hypertension,No-show
+15,94,4,2025-01-07,Checkup,Scheduled
+16,52,47,2025-05-20,Headache,Scheduled
+17,32,13,2025-03-25,Injury,No-show
+18,18,28,2025-02-04,Back Pain,Cancelled
+19,60,16,2025-06-04,Checkup,No-show
+20,71,7,2025-03-30,Fever,Scheduled
+21,12,60,2025-05-22,Injury,Completed
+22,53,32,2025-05-19,Cough,Completed
+23,52,58,2025-04-06,Fever,Completed
+24,49,1,2025-02-02,Hypertension,Cancelled
+25,59,19,2025-04-29,Hypertension,No-show
+26,20,13,2025-03-11,Diabetes,Completed
+27,8,38,2025-02-27,Asthma,Scheduled
+28,96,21,2025-04-04,Fever,Scheduled
+29,75,31,2025-03-19,Asthma,Completed
+30,8,62,2025-05-14,Asthma,Scheduled
+31,24,5,2025-02-01,Routine Check,Scheduled
+32,87,56,2025-05-12,Injury,No-show
+33,16,61,2025-02-19,Routine Check,Completed
+34,75,39,2025-05-15,Fever,Scheduled
+35,54,43,2025-03-15,Routine Check,Cancelled
+36,34,14,2025-04-27,Headache,Completed
+37,34,26,2025-03-15,Back Pain,Cancelled
+38,59,21,2025-06-08,Checkup,Scheduled
+39,59,40,2025-04-08,Routine Check,Scheduled
+40,10,35,2025-06-01,Injury,Cancelled
+41,17,60,2024-12-21,Headache,Scheduled
+42,32,24,2025-03-19,Diabetes,Completed
+43,57,54,2025-01-07,Asthma,Cancelled
+44,79,63,2025-02-04,Asthma,Scheduled
+45,86,53,2024-12-29,Asthma,Cancelled
+46,85,7,2025-02-28,Back Pain,Cancelled
+47,15,57,2025-04-18,Checkup,Completed
+48,35,19,2025-05-18,Routine Check,Completed
+49,92,22,2025-01-27,Injury,Cancelled
+50,65,32,2025-04-26,Diabetes,Scheduled
+51,12,41,2025-05-01,Hypertension,Cancelled
+52,6,1,2025-01-29,Headache,Completed
+53,82,63,2025-05-20,Diabetes,Completed
+54,95,29,2025-02-15,Asthma,No-show
+55,72,1,2025-03-06,Checkup,Scheduled
+56,89,58,2025-02-22,Back Pain,Scheduled
+57,48,38,2025-03-26,Asthma,Completed
+58,56,9,2025-03-30,Fever,Cancelled
+59,47,58,2024-12-17,Fever,Cancelled
+60,27,44,2025-05-01,Injury,Scheduled
+61,46,50,2025-05-26,Asthma,No-show
+62,80,48,2025-02-05,Back Pain,Completed
+63,21,63,2025-02-02,Back Pain,No-show
+64,4,12,2025-02-09,Headache,No-show
+65,86,56,2025-01-03,Injury,Cancelled
+66,21,51,2025-03-03,Checkup,No-show
+67,5,55,2025-04-25,Cough,Completed
+68,26,53,2025-05-10,Cough,Cancelled
+69,40,53,2025-05-24,Injury,Completed
+70,4,43,2025-02-20,Injury,No-show
+71,43,18,2024-12-30,Checkup,Cancelled
+72,45,42,2025-04-02,Asthma,No-show
+73,87,63,2025-06-14,Asthma,Cancelled
+74,4,8,2025-01-19,Diabetes,Completed
+75,75,62,2025-03-18,Diabetes,Scheduled
+76,14,39,2025-02-14,Hypertension,Cancelled
+77,94,51,2025-02-22,Headache,No-show
+78,78,63,2025-01-27,Asthma,Scheduled
+79,50,58,2025-06-07,Routine Check,Completed
+80,33,3,2025-04-06,Hypertension,Scheduled
+81,67,60,2025-02-06,Asthma,Completed
+82,47,28,2025-01-20,Checkup,Cancelled
+83,80,21,2025-05-09,Checkup,Cancelled
+84,65,20,2025-04-27,Hypertension,Cancelled
+85,52,45,2025-06-14,Diabetes,Completed
+86,25,27,2025-06-10,Hypertension,Completed
+87,79,37,2025-01-21,Diabetes,No-show
+88,71,54,2025-03-22,Fever,Cancelled
+89,37,14,2025-05-08,Hypertension,Cancelled
+90,60,29,2025-01-23,Cough,Completed
+91,66,31,2025-01-30,Back Pain,Scheduled
+92,37,33,2025-05-07,Routine Check,Cancelled
+93,12,53,2025-02-01,Injury,Cancelled
+94,29,52,2025-06-03,Injury,Completed
+95,4,3,2025-02-05,Injury,No-show
+96,79,55,2025-01-25,Checkup,No-show
+97,54,57,2025-01-29,Routine Check,Completed
+98,92,45,2025-01-24,Hypertension,No-show
+99,52,16,2025-05-27,Back Pain,Scheduled
+100,97,56,2025-02-02,Checkup,No-show
